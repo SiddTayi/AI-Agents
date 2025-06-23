@@ -9,7 +9,7 @@ Welcome to the `AI Agents` repository! This is a curated collection of exciting 
 This repository will host a diverse range of AI agent projects. Each project will reside in its own dedicated directory, complete with its own `README.md` and necessary files to run it independently. You'll find agents designed for:
 
 * **Information Gathering**: Agents that interact with external tools like web search, APIs, and databases to gather and synthesize information (like the Trip Planning Agent!).
-  * **Trip Planning Agents: Agents leveraging the power of AI and external tools to curate a detailed trip itinerary based on the user's preferece.  
+  * **Trip Planning Agents**: Agents leveraging the power of AI and external tools to curate a detailed trip itinerary based on the user's preferece.  
 
 #### Comming up
 * **Automation & Productivity**: Agents that automate tasks, manage schedules, or assist with data processing.
