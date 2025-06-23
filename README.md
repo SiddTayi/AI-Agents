@@ -1,4 +1,4 @@
-# 🤖 AI Agents: A Collection of Fun & Intelligent Projects 🧠
+# 🤖 AI Agents: A Collection of Fun Projects 🧠
 
 Welcome to the `AI Agents` repository! This is a curated collection of exciting and "fun" projects, each showcasing different aspects and applications of Artificial Intelligence agents. From simple rule-based agents to more complex, LLM-powered entities, this repository aims to be a playground for exploring the capabilities of AI in various creative and practical scenarios.
 
