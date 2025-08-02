@@ -9,7 +9,9 @@ Welcome to the `AI Agents` repository! This is a curated collection of exciting 
 This repository will host a diverse range of AI agent projects. Each project will reside in its own dedicated directory, complete with its own `README.md` and necessary files to run it independently. You'll find agents designed for:
 
 * **Information Gathering**: Agents that interact with external tools like web search, APIs, and databases to gather and synthesize information (like the Trip Planning Agent!).
-  * **Trip Planning Agents**: Agents leveraging the power of AI and external tools to curate a detailed trip itinerary based on the user's preferece.  
+  * **Trip Planning Agents**: Agents leveraging the power of AI and external tools to curate a detailed trip itinerary based on the user's preferece.
+* **Resume Screening**: AI agents that analyze and screen resumes against job descriptions to identify the best candidates.
+  * **Resume Screener**: An intelligent agent that evaluates resumes against job requirements and provides detailed screening reports.
 
 #### Comming up
 * **Automation & Productivity**: Agents that automate tasks, manage schedules, or assist with data processing.
@@ -24,6 +26,8 @@ This repository will host a diverse range of AI agent projects. Each project wil
 To explore a project, simply navigate to its respective directory. Each project folder will contain a `README.md` with specific instructions on how to set up, run, and interact with that particular agent.
 
 ```bash
-# Example: Navigating to a project
+# Example: Navigating to projects
 cd Trip-Planner
-# Then, follow the instructions in trip-planning-agent/README.md
+# Or
+cd Screening
+# Then, follow the instructions in the respective README.md files
