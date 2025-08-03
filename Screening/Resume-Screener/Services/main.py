@@ -2,9 +2,11 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from Utils.document_reader import get_resume_and_jd, get_resume_and_jd_with_langchain
+from Utils.excel_manager import ExcelManager
 from agent_def import resume_parser, hiring_manager
 from task_def import resume_task, hiring_task
 from crewai import Crew
+from Commons.config import RESUME_PATH, JD_PATH
 
 def main():
     print("📄 Reading documents...")
@@ -17,6 +19,9 @@ def main():
         print(f"✅ Successfully loaded documents:")
         print(f"   📄 Resume: {len(resume)} characters")
         print(f"   📄 Job Description: {len(jd)} characters")
+        
+        # Initialize Excel manager
+        excel_manager = ExcelManager()
         
         # Create agents
         print("\n🤖 Creating agents...")
@@ -45,6 +50,23 @@ def main():
         print("=" * 50)
         print(result)
         print("=" * 50)
+        
+        # Save results to Excel
+        print("\n💾 Saving results to Excel...")
+        success = excel_manager.append_result(RESUME_PATH, JD_PATH, result)
+        
+        if success:
+            # Get and display summary statistics
+            stats = excel_manager.get_summary_stats()
+            if isinstance(stats, dict):
+                print("\n📈 Summary Statistics:")
+                print(f"   📊 Total Candidates: {stats['total_candidates']}")
+                print(f"   📊 Average Score: {stats['average_score']:.2f}" if stats['average_score'] != 'N/A' else f"   📊 Average Score: {stats['average_score']}")
+                print(f"   🎯 High Scores (8-10): {stats['high_scores']}")
+                print(f"   📋 Medium Scores (6-7): {stats['medium_scores']}")
+                print(f"   ⚠️ Low Scores (<6): {stats['low_scores']}")
+            else:
+                print(f"📈 {stats}")
         
         return resume, jd, result
     else:

@@ -71,19 +71,33 @@ def hiring_task(agent, jd, resume, context):
                 8-10: highest relevancy - good match with all the skills aligning with the JD. 
                 7: can be considered
                 <= 6: Do not consider.      
-            6. I just need a table following the json schema and nothing else. No other text or explanation.
+            6. Extract the candidate's name, phone number, and email from the resume if available.
+            7. Provide the job role/title from the JD.
+            8. Format your response as a structured table with clear headers and values.
         """,
         expected_output = """
-            Create a nice table in markdown with the column headers defined in the below json schema. Do not include any other text or explanation.
-            JSON SCHEMA:
-            {
-                "Name":"",
-                "JD_Role": "",
-                "Phone_Number": "",
-                "Email": "",
-                "Score": "x/10",
-                "additional_information": "",
-            }
+            Create a structured table with the following information. Format it clearly with headers and values separated by colons or pipes.
+            
+            REQUIRED FIELDS:
+            Name: [Candidate's name from resume]
+            JD_Role: [Job role/title from JD]
+            Phone_Number: [Phone number from resume if available]
+            Email: [Email from resume if available]
+            Score: [X/10 format]
+            Additional_Information: [Brief summary of key strengths/weaknesses and reasoning for score]
+            
+            Example format:
+            | Name | JD_Role | Phone_Number | Email | Score | Additional_Information |
+            |------|---------|--------------|-------|-------|----------------------|
+            | John Doe | Data Engineer | +1-555-0123 | john@email.com | 8/10 | Strong Python skills, relevant experience in ETL pipelines |
+            
+            OR use this format:
+            Name: John Doe
+            JD_Role: Data Engineer
+            Phone_Number: +1-555-0123
+            Email: john@email.com
+            Score: 8/10
+            Additional_Information: Strong Python skills, relevant experience in ETL pipelines
         """,
         output_file="report.md",
         context = context
