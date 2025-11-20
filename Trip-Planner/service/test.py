@@ -1,1 +1,1 @@
-print("This is a test msg")
+print("This is a test")
